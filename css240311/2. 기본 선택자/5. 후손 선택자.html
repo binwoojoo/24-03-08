@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+/* 자식, 후손, 형제 선택자
+   -가장 마지막 선택자가 타겟이고
+   앞에는 전부 조건이다 */
+div .orange {
+  background: orange;
+}
+ /* 자식 선택자로 했을 경우 새로운 선택자에 묶어지면 적용이 안될수있음 */
+/* 후손 선택자를 이용하면 위 경우를 방지 */
+ body  div  ul {
+  list-style: none;
+}
+body div em {
+  background: skyblue;
+}
+</style>
+</head>
+<body>
+  <h1 class="yello low primary" id="change">안녕하세요</h1>
+<em>화이팅</em>
+  <div>
+    <Em>해야지</Em>
+    <section>
+    <ul>
+      <li id="apple" class = "green">사과</li>
+      <li>포도</li>
+      <li class="orange">오렌지</li>
+    </ul>
+    </section>
+    <div class="green">당근</div>
+    <p class="big">토마토</p>
+    <span class="orange">오렌지</span>
+
+  </div>
+</body>
+</html>
