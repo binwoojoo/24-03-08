@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* !important: 무한대 점 */
+
+    /* 태그 1점 */
+    div{
+        color: blue;
+    }
+    /* 아이디 100점 */
+    #c-y{
+        color: yellow;
+    }
+    /* 클래스 10점 */
+    .c-g {
+        color: green;
+    }
+    /* 태그 1점 */
+    body {
+        color: aqua;
+    }
+    /* 태그 1점 */
+    div {
+        color: red;
+    }
+    /* 태그 1점 */
+    h1 {
+        color: lightcoral;
+    }
+    /* 아이디 100점 태그 1점 101점 */
+    #aaa h1 {
+        color: gray;
+    }
+    /* 클래스 10점 태그 1점 11점 */
+    .bbb h1 {
+        color: orangered;
+    }
+    /* 아이디 100점 태그 1점 클래스 10점 태그 1점 112점 */
+    #aaa div.bbb h1 {
+        color: greenyellow;
+    }
+    /* 아이디 100점 클래스 10점 태그 1점 111점 */
+    #aaa .bbb h1 {
+        color: tomato;
+    }
+    /* 태그 1점 클래스 10점 태그1점 12점 */
+    div.bbb>h1 {
+        color: violet;
+    }
+</style>
+<body>
+    <!-- 인라인은 1000점 -->
+    <div id="c-y" class="c-g" style="color: orange">안녕하세요1</div>
+    <div id="c-y" class="c-g">안녕하세요2</div>
+    <div class="c-g">안녕하세요3</div>
+    <div>안녕하세요4</div>
+    <p>안녕하세요5</p>
+
+    <div id="aaa">
+        <div class="bbb">
+            <h1>안녕하세요6</h1>
+        </div>
+    </div>
+    <!-- 조상을 많이 나열해서 우선도를 올리자 -->
+</body>
+</html>

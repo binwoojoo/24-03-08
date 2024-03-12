@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    div {
+      border: 2px solid gray;
+    }
+    /* 퍼센트는 부모 대비 비율 */
+    .root {
+      width: 50%;
+    }
+    .parent {
+      width: 50%;
+      margin-left: 50px;
+    }
+    .child {
+      width: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="root">ROOT
+    <div class="parent">PARENT
+      <div class="child"></div>CHILD1
+      <div class="child"></div>CHILD2
+    </div>
+  </div>
+</body>
+</html>
