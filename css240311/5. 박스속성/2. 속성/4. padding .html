@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      /* padding을 쓰면 길이에 따라 박스 모양이 바뀜  */
+      /* box-sizing :border-box가 길이를 맞춰준다 */
+      background: orange;
+      width: 500px;
+      height: 500px;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 40px;
+      padding-bottom: 30px;
+      box-sizing: border-box;
+    }
+    .box {
+      width: 50%;
+      height: 50%;
+      font-size: 1.5em;
+      background: rebeccapurple;
+      color: white;
+    }
+    .card {
+      width: 250px;
+      height: 350px;
+      border: 2px solid gray;
+      margin: auto;
+      border-radius: 15px;
+      box-shadow: 2px 2px 5px 5px grey;
+      padding: 10px;
+    }
+    .card .image {
+      border: 2px solid lightslategray;
+      height: 250px;
+      border-radius: 15px;
+      /* 삐져나온 부분 숨기기 */
+      overflow: hidden;
+      
+    }
+    .card .image img {
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">안녕하세요</div>
+  </div>
+  <div class="card">
+    <div class="image">
+    <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fpng.pngtree.com%2Fpng-vector%2F20210521%2Fourlarge%2Fpngtree-no-smoking-png-png-image_3328485.png&type=a340" 
+    alt="">
+  </div>
+    <p class="content">
+      어어어어어ㅓ어어
+    </p>
+  </div>
+  
+</body>
+</html>
