@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+.box {
+  width: 550px;
+  height: 350px;
+  border: 4px dashed gray;
+  margin: 50px auto;
+  background-color: palegreen;
+  background-image: url(../../img/sky.jpg);
+  /* 배경 이미지 사이즈 조정 */
+  /* width height */
+  background-size: 150px 150px ;
+  background-repeat: no-repeat;
+  /* 배경 이미지 위치 조정 */
+  /* x축 y축 */
+  background-position: 100px top;
+  /* 한 번에 적용도 가능 */
+  background: no-repeat violet
+  url(../../img/publishing.png)
+  /* 앞이 위치 뒤가 사이즈 */
+  100px 20px / 200px 180px;
+}
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>
