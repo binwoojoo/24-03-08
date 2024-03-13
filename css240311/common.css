@@ -1,0 +1,16 @@
+/* 공통 css 적는 파일 */
+@import url('https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css');
+
+* {
+  box-sizing: border-box;
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
