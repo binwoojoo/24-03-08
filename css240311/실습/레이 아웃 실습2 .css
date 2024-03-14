@@ -30,18 +30,27 @@
 .container .gallery {
   background: #6a6a6a;
   padding: 20px 0;
+  position: relative;
 }
 
 .container .gallery li {
   border: 1px solid #ccc;
   float: left;
-  width: 23.75%;
+  width: 15.5%;
   height: 340px;
   margin-right: 1%;
   padding: 5px;
 }
 .container .gallery li:first-child {
   margin-left: 1%;
+}
+
+.container .gallery li:last-child {
+  margin: 1%;
+  position: relative;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%,0);
 }
 
 .container .gallery li .img-box {
@@ -89,3 +98,23 @@
   background-image: url('../../../img/sunflower.jpg');
 }
 
+#sibal {
+ background-color: yellowgreen;
+}
+#sibal .img-box {
+  background-image: url(/img/KakaoTalk_Photo_2024-03-13-16-37-05.png);
+}
+
+#fuck {
+  background-color: rgb(249, 174, 203);
+ }
+ #fuck .img-box {
+   background-image: url(/img/KakaoTalk_Photo_2024-03-13-16-37-05.png);
+ }
+
+ #fuck2 {
+  background-color: rgb(249, 174, 203);
+ }
+ #fuck2 .img-box {
+   background-image: url(/img/KakaoTalk_Photo_2024-03-13-16-37-05.png);
+ }
