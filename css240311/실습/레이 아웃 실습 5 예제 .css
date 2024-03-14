@@ -1,0 +1,156 @@
+@import url('../common.css');
+
+body {
+  font-size: 14px;
+  background: #aaa;
+  font-family: 'NGthic', sans-serif;
+}
+
+#wrapper {
+  background: #fff;
+  width: 70%;
+  margin: 0 auto;
+}
+
+#wrapper header {
+  /* border: 2px solid red; */
+  color: #fff;
+  text-align: center;
+}
+#wrapper header h1 {
+  background: #fa0;
+  font-size: 5.5em;
+  font-weight: 700;
+  padding: 10px;
+}
+#wrapper header h1 span {
+  font-size: 18px;
+  display: block;
+  margin-top: 10px;
+}
+#wrapper header .stit {
+  background: #ccc;
+  color: #333;
+  padding: 5px 0;
+}
+
+#wrapper .container > * {
+  /* border: 2px solid violet; */
+  float: left;
+}
+
+#wrapper .container .side-menu {
+  width: 25%;
+}
+#wrapper .container .side-menu h3 {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #fff;
+  background: #900;
+  padding: 10px;
+}
+
+#wrapper .container .side-menu ul {
+  margin-top: 5px;
+}
+#wrapper .container .side-menu ul li {
+  padding: 10px;
+}
+#wrapper .container .side-menu ul li a {
+  font-weight: 700;
+  text-decoration: underline;
+}
+#wrapper .container .side-menu ul li a:hover {
+  border-bottom: 1px dashed #000;
+}
+
+#wrapper .container .main-content {
+  width: 50%;
+  background: #ddd;
+  color: #123456;
+}
+
+#wrapper .container .main-content .art-piece {
+  /* border: 3px solid #000; */
+  margin-top: 10px;
+  font-size: 1.3em;
+  font-weight: 700;
+  padding: 10px;
+}
+
+#wrapper .container .main-content .art-piece .title {
+  color: #ddd;
+  background: #123456;
+  padding: 7px 5px;
+}
+#wrapper .container .main-content .art-piece .title a {
+  display: block;
+}
+#wrapper .container .main-content .art-piece .title a:hover {
+  color: #ee0;
+}
+#wrapper .container .main-content .art-piece .artist {
+  margin: 20px 0;
+}
+#wrapper .container .main-content .art-piece .detail {
+  font-size: 0.7em;
+  font-weight: 400;
+}
+
+
+/* > .banner */
+.container .banner {
+  /* background: violet; */
+  width: 25%;
+  font-weight: 700;
+}
+
+.container .banner h3 {
+  font-size: 1.7em;
+  color: #333;
+  padding: 20px 10px;
+}
+.container .banner h3 span,
+.container .banner h3 strong {
+  display: block;
+  margin-bottom: 10px;
+}
+.container .banner h3 span {
+  text-decoration: underline;
+}
+.container .banner h3 .all {
+  color: #999;
+}
+.container .banner h3 .love {
+  color: #fa0;
+}
+
+.container .banner .link {
+  /* background: tomato; */
+  padding: 0 10px;
+}
+
+.container .banner .link li {
+  margin-bottom: 15px;
+}
+.container .banner .link li a {
+  display: block;
+  text-decoration: underline;
+  margin-bottom: 5px;
+  width: fit-content;    
+}
+.container .banner .link li span {
+  font-weight: 400;
+}
+
+/* footer style */
+footer {
+  background: #123456;
+  padding: 10px;
+  font-weight: 700;
+  color: #eee;
+  text-align: center;
+}
+footer a {
+  text-decoration: underline;
+}
