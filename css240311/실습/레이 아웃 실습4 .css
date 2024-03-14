@@ -1,0 +1,92 @@
+@import url(../common.css);
+
+#wrapper {
+  width: 100%;
+}
+h1{
+  height: 150px;
+  border: 1px solid #000;
+  font-size: 40px;
+  background: navy;
+  padding: 25px;
+  text-align: center;
+  color: yellow;
+}
+h1 strong {
+font-weight: bold;
+  color: white;
+  font-size: 100px;
+}
+h1 span {
+  font-size: 60px;
+}
+h1 em {
+  font-size: 80px;
+  color: whitesmoke;
+  font-weight: bold;
+}
+.container {
+  border: 1px solid #000;
+  /* position: relative; */
+}
+.container .menu {
+  width: 20%;
+  height: 550px;
+  border: 1px solid #000;
+  background: gray;
+  float: left;
+  padding: 20px;
+  font-size: 20px;
+  line-height: 45px;
+}
+.container .content {
+  float: left;
+  width: 80%;
+}
+.container .content h2:first-child{
+  border: 1px solid #000;
+  height: 50px;
+  background: red;
+  font-size: 30px;
+  padding: 10px;
+  text-indent: 20px;
+  color: yellow;
+  font-weight: 800;
+}
+.container .content p:nth-child(2) {
+ height: 150px;
+ font-size: 20px;
+ left: 40px;
+padding: 20px;
+ text-align: justify;
+}
+
+.container .content h2:nth-child(3){
+  border: 1px solid #000;
+  height: 50px;
+  background: red;
+  font-size: 30px;
+  padding: 10px;
+  text-indent: 20px;
+  color: yellow;
+  font-weight: 800;
+}
+.container .content p:nth-child(4) {
+  padding: 20px;
+  font-size: 20px;
+  text-align: justify;
+ }
+ footer {
+  border: 1px solid #000;
+  height: 50px;
+  background: lightgray;
+  padding: 20px;
+ }
+ li {
+  padding-top: 5px;
+  text-decoration: underline;
+ }
+ a:hover {
+  text-decoration: underline;
+  color: blue;
+ }

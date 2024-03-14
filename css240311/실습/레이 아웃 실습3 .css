@@ -1,0 +1,34 @@
+@import url(../common.css);
+
+.mainbox {
+  width: 400px;
+  height: 200px;
+  border: 1px solid #000;
+  background: pink;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+}
+.mainbox .head {
+  color: green;
+  font-size: 1.8rem;
+  padding-bottom: 10px;
+}
+.mainbox .mainlist .content {
+  color: gray;
+  padding-left: 8px;
+  font-size: 1.5rem;
+}
+.linkup {
+  color: gray;
+  padding-left: 8px;
+  font-size: 1.8rem;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+a{
+  color: blue;
+  text-decoration: underline;
+}

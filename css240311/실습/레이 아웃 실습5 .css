@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+header {
+  background: orange;
+  /* height: 128px; */
+  text-align: center;
+  padding: 10px 0;
+}
+header h1 {
+  font-size: 80px;
+  color: white;
+}
+header h1 span {
+  font-size: 15px;
+ display: block;
+ margin-bottom: 10px;
+}
+header .stit {
+  height: 22px;
+  margin: none;
+  background: lightgrey;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 14px;
+}
+.container .side-menu {
+  float: left;
+  border: 1px solid #000;
+  width: 20%;
+  height: 700px; 
+  float: left;
+}
+.container .side-menu h3:first-child {
+  border: 1px solid #000;
+  background: red;
+  height: 25px;
+  color: white;
+  font-size: 22px;
+  padding: 5px;
+ 
+}
+.container .main-content {
+  width: 60%;
+  height: 700px;
+  border: 1px solid #000;
+  float: left;
+}
+.container .banner {
+  float: right;
+  width: 20%;
+  height: 700px;
+  border: 1px solid #000;
+}
+footer {
+  border: 1px solid #000;
+  height: 20px;
+}
