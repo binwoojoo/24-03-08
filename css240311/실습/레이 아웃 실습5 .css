@@ -1,58 +1,122 @@
 * {
+  font-family: 'NGothic', sans-serif;
   box-sizing: border-box;
+}
+body {
+  background: fff;
 }
 header {
   background: orange;
-  /* height: 128px; */
   text-align: center;
-  padding: 10px 0;
+  padding-top: 15px
 }
 header h1 {
-  font-size: 80px;
+  padding: 10px;
+  font-size: 75px;
   color: white;
+  font-weight: 900;
 }
 header h1 span {
-  font-size: 15px;
+ font-size: 14px;
  display: block;
  margin-bottom: 10px;
 }
 header .stit {
   height: 22px;
-  margin: none;
   background: lightgrey;
   text-align: center;
-  padding-top: 10px;
+  padding: 5px;
   font-size: 14px;
 }
 .container .side-menu {
-  float: left;
-  border: 1px solid #000;
   width: 20%;
-  height: 700px; 
   float: left;
 }
-.container .side-menu h3:first-child {
-  border: 1px solid #000;
-  background: red;
-  height: 25px;
+.container .side-menu h3 {
+  background: rgb(164, 37, 37);
+  height: 30px;
   color: white;
-  font-size: 22px;
-  padding: 5px;
- 
+  padding:8px;
 }
 .container .main-content {
   width: 60%;
-  height: 700px;
-  border: 1px solid #000;
   float: left;
 }
 .container .banner {
   float: right;
   width: 20%;
   height: 700px;
-  border: 1px solid #000;
+  padding: 20px;
+  /* border: 1px solid #000; */
 }
 footer {
-  border: 1px solid #000;
-  height: 20px;
+  background: rgb(45, 45, 91);
+  height: 30px;
+  float: left;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  color: #fff;
+}
+footer a {
+  color: #fff;
+}
+.container .art-piece {
+  background: rgb(175, 174, 174);
+  padding: 36px 20px;
+}
+.main-content .title {
+  background: rgb(47, 47, 102);
+  height: 35px;
+  padding: 7px
+}
+.main-content .title a {
+  color: rgb(229, 227, 227);
+  text-decoration: none;
+  font-size: 24px;
+}
+.main-content .artist {
+  font-size: 24px;
+  padding: 15px 0;
+}
+.container .side-menu ul li{
+  padding: 10px 15px;
+  font-weight: 800;
+  font-size: 18px;
+}
+.container ul li a{
+  color: black;
+  /* padding: 10px; */
+  padding-bottom: 10px;
+
+}
+.banner .all {
+  display: block;
+  font-size: 25px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.banner .love {
+  display: block;
+  font-size: 25px;
+  font-weight: 700;
+  text-decoration: underline;
+  color: rgb(233, 143, 17);
+  padding: 10px 0;
+}
+.banner strong {
+  font-size: 25px;
+  font-weight: 700;
+}
+.banner .link li{
+  font-size: 18px;
+  font-weight: bold;
+  padding: 6px 0;
+}
+.banner .link li:first-child {
+  margin-top: 25px;
+}
+.banner .link span {
+  display: block;
+  font-weight: 400;
 }
