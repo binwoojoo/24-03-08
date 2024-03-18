@@ -12,8 +12,17 @@
       
     }
     .box:hover {
-      animation: grow-shrink 2s;
+      /* animation: grow-shrink 2s; */
+      /* animation-name: grow-shrink;
+      animation-duration: 2s;
+      animation-delay: 0.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-direction: alternate; */
+      animation: grow-shrink 2s 500ms
+      infinite linear alternate;
     }
+
     /* 애니메이션 정의 */
     @keyframes grow-shrink {
       0% {

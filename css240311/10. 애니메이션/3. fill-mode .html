@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background: rgb(0, 251, 205);
+      margin: 30px;
+      animation: moving 2s 1s;
+      animation-fill-mode: both;
+    }
+    @keyframes moving {
+      from {
+        background: gold;
+        transform: translate(100px,100px);
+      }
+      to {
+        background: red;
+        transform: translate(300px,100px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>
