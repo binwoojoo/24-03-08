@@ -57,7 +57,7 @@ while (true) {
   // 0, 1, 2 중에 하나가 생성되는 난수
   var markNum = Math.floor(Math.random() * 3);
 
-  var mark = '+'; // 연산 기호를 문자열로 저장
+  var mark = ''; // 연산 기호를 문자열로 저장
 
   // 실제 정답
   var realAnswer;
