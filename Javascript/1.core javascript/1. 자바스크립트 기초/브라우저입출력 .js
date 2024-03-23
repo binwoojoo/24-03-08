@@ -4,7 +4,6 @@ const userName = '스윙스';
 
 console.log(`${food}의 왕 ${userName}`);
 
-
 // 브라우저 전용 함수 : nodejs 환경에서는 작동 불가
 // prompt() : 브라우저에서 입력을 할 수 있게 해주는 함수
 // confirm() : 브라우저에서 확인/취소를 할 수 있게 해주는 함수
