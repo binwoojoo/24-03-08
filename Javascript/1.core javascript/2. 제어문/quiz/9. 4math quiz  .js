@@ -21,12 +21,12 @@ if(level === 1) {
 while(true) {
   var num1 = Math.floor(Math.random() * maxnum) + 1,
       num2 = Math.floor(Math.random() * maxnum) + 1;
-  var rightAnswer;
+      if(num1 - num2 === 0) {
+        continue
+      }
   var markNum = Math.floor(Math.random() * 3) + 1;
-  var mark;
-  if(num1 - num2 === 0) {
-    continue
-  }
+  var mark = '';
+  var rightAnswer;
       if(markNum === 1) {
         mark = '+';
         rightAnswer = num1 + num2;
