@@ -12,7 +12,7 @@
 var array = [];
 var arraySum = 0;
 
-while(true) {
+while(array.length < 6) {
     var num = prompt('숫자를 입력해 주세요\n그만두려면 "그만"을 입력해주세요');
 
     if(num === '그만') break;
