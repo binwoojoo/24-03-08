@@ -33,5 +33,4 @@ function isLogin() {
     return !!window.localStorage.getItem('LOGIN_ACCESS_TOKEN');
   }
   
-  const isLogin = () => !!window.localStorage.getItem('LOGIN_ACCESS_TOKEN');
-  
+const isLogin = () => !!window.localStorage.getItem('LOGIN_ACCESS_TOKEN');
