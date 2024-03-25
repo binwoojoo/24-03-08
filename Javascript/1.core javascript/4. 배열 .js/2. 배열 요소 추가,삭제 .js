@@ -1,14 +1,13 @@
-
-var pets = ['개', '고양이', '물개',];
+var pets = ["개", "고양이", "물개"];
 
 console.log(pets);
-pets[3] = '치타';
+pets[3] = "치타";
 
 console.log(pets);
 
 // push(): 배열 맨 끝에 데이터 추가
-pets.push('호랑이');
-pets.push('독수리', '닭', '소', '돼지');
+pets.push("호랑이");
+pets.push("독수리", "닭", "소", "돼지");
 
 console.log(pets);
 
@@ -26,5 +25,5 @@ console.log(myPet2);
 pets.shift();
 console.log(pets);
 
-pets.unshift('댕댕이');
+pets.unshift("댕댕이");
 console.log(pets);
