@@ -12,11 +12,11 @@ while (true) {
     var outMember = prompt(`현재멤버:${tvxq}\n삭제할 멤버를 입력해주세요`);
     if (tvxq.includes(outMember)) {
       tvxq.splice(tvxq.indexOf(outMember), 1);
+      alert(`${outMember} 삭제완료!!`);
     } else {
-      alert(`${outMember}는 잘못된 이름입니다.`);
+      alert(`${outMember}(은)는 잘못된 이름입니다.`);
       continue;
     }
-    alert(`${outMember} 삭제완료!!`);
   } else if (choice === 3) {
     alert("프로그램을 종료합니다.");
     break;

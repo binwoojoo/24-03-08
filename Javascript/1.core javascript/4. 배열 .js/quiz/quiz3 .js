@@ -20,8 +20,21 @@ while (true) {
   var user = prompt(`현재멤버:${tvxqCopy}\n삭제할 멤버를 입력해주세요`);
   if (tvxqCopy.includes(user)) {
     tvxqCopy.splice(tvxqCopy.indexOf(user), 1);
-    //   break;
   } else {
-    alert(`${user}는 잘못된 이름이다.다시 입력해라`);
+    alert(`${user}(은)는 잘못된 이름이다.다시 입력해라`);
   }
 }
+
+// while (tvxq.length > 0) {
+//     var deleteTarget = prompt(`현재 멤버: [${tvxq}]\n삭제할 이름을 입력하세요.`);
+
+//     if (tvxq.includes(deleteTarget)) {
+//       // 삭제 타겟이 있는경우 -> 삭제 진행
+//       var index = tvxq.indexOf(deleteTarget);
+//       tvxq.splice(index, 1);
+//       alert(`삭제 완료!\n남은 멤버: [${tvxq}]`);
+//     } else {
+//       // 없는 경우
+//       alert(`${deleteTarget}은(는) 잘못된 이름입니다.\n다시 입력하세요!`);
+//     }
+//   }
