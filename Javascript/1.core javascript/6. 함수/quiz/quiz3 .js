@@ -1,10 +1,10 @@
 // 2개의 숫자를 전달받아 작은 수를 리턴
 function min2(n1, n2) {
-    if (n1 > n2) {
-      return n2;
-    } else {
-      return n1;
-    }
+    // if (n1 > n2) {
+    //   return n2;
+    // } else {
+    //   return n1;
+    // }
   
     return n1 > n2 ? n2 : n1;
   }
