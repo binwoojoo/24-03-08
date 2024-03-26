@@ -60,7 +60,7 @@ console.log('===========================');
 
 console.log(foodlist);
 
-foodlist.splice(2, 1);  // 시작 인덱스(1)부터, 2개 지우세요
+foodlist.splice(2, 1);  // 시작 인덱스(2)부터, 1개 지우세요
 
 console.log(foodlist);
 
