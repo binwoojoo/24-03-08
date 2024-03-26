@@ -33,3 +33,17 @@ function sayHello(language = "한국어") {
   }
 }
 sayHello();
+
+// 매개변수가 없는 함수
+function selectRandomPet() {
+  var pets = ["멍멍이", "야옹이", "낑낑이", "고라니", "노루"];
+  var rn = Math.floor(Math.random() * pets.length);
+  return pets[rn];
+}
+
+var r1 = selectRandomPet();
+var r2 = selectRandomPet();
+var r3 = selectRandomPet();
+console.log(`r1: ${r1}`);
+console.log(`r2: ${r2}`);
+console.log(`r3: ${r3}`);
