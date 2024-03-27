@@ -57,7 +57,7 @@ function showNumber(n, condition) {
   console.log(nums);
 }
 
-showNumber(100, (z) => z % 6 === 0 && z % 12 !== 0);
+showNumber(100, z => z % 6 === 0 && z % 12 !== 0);
 
 console.log("===========================");
 

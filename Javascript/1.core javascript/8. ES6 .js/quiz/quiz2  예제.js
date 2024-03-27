@@ -37,58 +37,62 @@ const userList = [
   },
 ];
 
-function min(userList, y) {
-  var mini = userList[0];
-  for (let i = 0; i < userList.length; i++) {
-    if (userList[i][y] < mini[y]) {
-      mini = userList[i];
+function min(userList, property) {
+  // userList가 비어있으면 null을 반환
+  if (userList.length === 0) {
+    return null;
+  }
+
+  let minValueUser = userList[0]; // 최소값을 가진 객체를 첫 번째 사용자로 초기화
+
+  // userList를 순회하면서 주어진 속성의 최소값을 찾음
+  for (const user of userList) {
+    if (user[property] < minValueUser[property]) {
+      minValueUser = user;
     }
   }
-  return mini;
+
+  return minValueUser;
 }
+
 
 function find(callback) {
   for (const user of userList) {
     if (callback(user)) {
       return user;
-    } else {
-      return null;
     }
   }
+  return undefined;
 }
 
-function some(callback2) {
+function some(callback) {
   for (const user of userList) {
-    if (callback2(user)) {
+    if (callback(user)) {
       return true;
-    } else {
+    }
+  }
+  return false;
+}
+
+function every(callback) {
+  for (const user of userList) {
+    if (!callback(user)) {
       return false;
     }
   }
+  return true;
 }
 
-function every(callback3) {
-  let checker = false;
-  for (const user of userList) {
-    if (callback3(user)) {
-      checker = true;
-    } else {
-      checker = false;
-      break;
-    }
-  }
-  return checker;
-}
 
-// // console.log(find());
-// console.log("최소 salary를 가진 사용자:", min(userList, "salary"));
-// console.log("최소 age를 가진 사용자:", min(userList, "age"));
+// console.log(find());
+console.log("최소 salary를 가진 사용자:", min(userList, "salary"));
+console.log("최소 age를 가진 사용자:", min(userList, "age"));
 
-// // '서울'에 사는 첫 번째 사용자를 찾는 예시
-// const firstUserInSeoul = find(function (user) {
-//   return user.address === "서울";
-// });
-// console.log("서울에 사는 첫 번째 사용자:", firstUserInSeoul);
+// '서울'에 사는 첫 번째 사용자를 찾는 예시
+const firstUserInSeoul = find(function (user) {
+  return user.address === "서울";
+});
+console.log("서울에 사는 첫 번째 사용자:", firstUserInSeoul);
 
 // // 급여 5,000,000 이상인 사용자가 하나라도 있는지 확인하는 예시
 const hasHighEarningUser = some((user) => user.salary >= 5000000);
