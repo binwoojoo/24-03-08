@@ -133,17 +133,17 @@ console.log(
 //   예를 들어, `{서울: 총거래액, 부산: 총거래액}`과 같은 형태입니다.**
 console.log('======================');
 
-// const totalByCity = {};  // { 서울: 500000, 대전: 30032030, ... }
+const totalByCity = {};  // { 서울: 500000, 대전: 30032030, ... }
 
-// for (const trs of traders) {
-//   const city = trs.trader.city;
-//   if (totalByCity[city]) { // 이 도시는 한번 누적된 적이 있음
-//     totalByCity[city] += trs.value;
-//   } else {  // 이 도시는 한번도 나온적이 없던 도시임
-//     totalByCity[city] = trs.value;
-//   }
-// }
-// console.log(totalByCity);
+for (let trs of traders) {
+  const city = trs.trader.city;
+  if (totalByCity[city]) { // 이 도시는 한번 누적된 적이 있음
+    totalByCity[city] += trs.value;
+  } else {  // 이 도시는 한번도 나온적이 없던 도시임
+    totalByCity[city] = trs.value;
+  }
+}
+console.log(totalByCity);
 
 // const totalByCity = traders.reduce((totalByCity, trs) => {
 //   const city = trs.trader.city;

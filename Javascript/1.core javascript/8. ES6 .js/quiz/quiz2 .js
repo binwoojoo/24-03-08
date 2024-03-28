@@ -97,3 +97,5 @@ console.log("연봉이 5,000,000 이상인 사용자가 있는가?:", hasHighEar
 // 모든 사용자가 '서울'에 사는지 확인하는 예시
 const allUsersInSeoul = every((user) => user.address === "서울");
 console.log("모든 사용자가 서울에 사는가?:", allUsersInSeoul);
+
+
