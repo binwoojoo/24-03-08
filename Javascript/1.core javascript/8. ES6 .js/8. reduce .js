@@ -44,14 +44,14 @@ const result = [99, 2, 3, 4, 5, 6].reduce(function (a, b) {
 },0);
 console.log(`result: ${result}`);
 
-// const resultTotalSweet = appleBasket.reduce((totalSweet, apple) => {
-//   console.log(totalSweet);
-//   console.log(apple);
-//   console.log("============");
-//   return totalSweet + apple.sweet;
-// }, 0);
+const resultTotalSweet = appleBasket.reduce((totalSweet, apple) => {
+  console.log(totalSweet);
+  console.log(apple);
+  console.log("============");
+  return totalSweet + apple.sweet;
+}, 0);
 
-// console.log(`사과 당도 총합: ${resultTotalSweet}`);
+console.log(`사과 당도 총합: ${resultTotalSweet}`);
 
 // console.log("============");
 

@@ -49,40 +49,40 @@ const traders = [
   },
 ];
 
-// 연습 1: 2022년에 발생한 모든 거래를 찾아
-//   거래자 정보(이름, 도시)를 배열에 매핑해주세요
-const nameAndCity2022 = traders
-  .filter((info) => info.year === 2022)
-  .map((info) => {
-    return info.trader;
-  });
-console.log(nameAndCity2022);
+// // 연습 1: 2022년에 발생한 모든 거래를 찾아
+// //   거래자 정보(이름, 도시)를 배열에 매핑해주세요
+// const nameAndCity2022 = traders
+//   .filter((info) => info.year === 2022)
+//   .map((info) => {
+//     return info.trader;
+//   });
+// console.log(nameAndCity2022);
 
-// 연습 2: 거래자가 근무하는 모든 도시이름을 배열에 담아주세요.
-const traderCity = traders.map((info) => {
-  const traderLiveInCity = info.trader.city;
-  return traderLiveInCity;
-});
-const cites = [...new Set(traderCity)]; // 중복 제거
-console.log(cites);
+// // 연습 2: 거래자가 근무하는 모든 도시이름을 배열에 담아주세요.
+// const traderCity = traders.map((info) => {
+//   const traderLiveInCity = info.trader.city;
+//   return traderLiveInCity;
+// });
+// const cites = [...new Set(traderCity)]; // 중복 제거
+// console.log(cites);
 
-// 연습 3: 대전에 근무하는
-// 모든 거래자를 찾아 거래자정보(이름, 도시)를 배열에 매핑해주세요.
-const traderInDaejeon = traders
-  .filter((info) => info.trader.city === "대전")
-  .map((info) => {
-    return info.trader;
-  });
-console.log(traderInDaejeon);
+// // 연습 3: 대전에 근무하는
+// // 모든 거래자를 찾아 거래자정보(이름, 도시)를 배열에 매핑해주세요.
+// const traderInDaejeon = traders
+//   .filter((info) => info.trader.city === "대전")
+//   .map((info) => {
+//     return info.trader;
+//   });
+// console.log(traderInDaejeon);
 
-// 연습 4: 모든 거래자의 이름을 배열에 모아주세요.
-const allTraderName = traders.map((info) => {
-  return info.trader.name;
-});
-const mappedName = [...new Set(allTraderName)];
-console.log(mappedName);
+// // 연습 4: 모든 거래자의 이름을 배열에 모아주세요.
+// const allTraderName = traders.map((info) => {
+//   return info.trader.name;
+// });
+// const mappedName = [...new Set(allTraderName)];
+// console.log(mappedName);
 
-// 연습 5: 서울에 사는 거래자의 모든 거래액의 총합 출력.
+//// 연습 5: 서울에 사는 거래자의 모든 거래액의 총합 출력.
 // let total = 0;
 // const allTradersInSeoulValue = traders
 //   .filter((info) => info.trader.city === "서울")
@@ -92,39 +92,49 @@ console.log(mappedName);
 //   .forEach((info) => (total += info));
 // console.log(total);
 
-const total = traders
-  .filter((trs) => trs.trader.city === "서울")
-  .reduce(function (total, trs) { return total += trs.value},0);
-console.log(total);
-
-// // 1. **2023년에 대전에서 발생한 모든 거래의 총액을 계산해주세요.**
-// let total = 0;
-// const AllValueInDaejeon = traders
-//   .filter((info) => info.year === 2023 && info.trader.city === "대전")
-//   .map((info) => {
-//     return info.value;
-//   })
-//   .forEach((info) => (total += info));
+// const total = traders
+//   .filter((trs) => trs.trader.city === "서울")
+//   .reduce(function (total, trs) { return total += trs.value},0);
 // console.log(total);
-// // 2. **부산에서 거래한 모든 거래자의 이름을 배열에 담아 출력해주세요.**
-// const AllNameTradeInBusan = traders
-//   .filter((info) => info.trader.city === "부산")
-//   .map((info) => {
-//     return info.trader.name;
-//   });
-// console.log(AllNameTradeInBusan);
-// // 3. **모든 거래 중 가장 높은 거래액을 가진 거래의 거래자 정보(이름, 도시)와 거래액을 출력해주세요.**
 
-// const mostValue = traders
-//   .map((info) => {
-//     const allValue = info.value;
-//   })
-//   .filter(info => {
-//     let minimum = allValue[0]
-//     if () {}
-//   });
+// 1. **2023년에 대전에서 발생한 모든 거래의 총액을 계산해주세요.**
+let total = 0;
+const AllValueInDaejeon = traders
+  .filter((info) => info.year === 2023 && info.trader.city === "대전")
+  .map((info) => {
+    return info.value;
+  })
+  .forEach((info) => (total += info));
+console.log(total);
+// 2. **부산에서 거래한 모든 거래자의 이름을 배열에 담아 출력해주세요.**
+const AllNameTradeInBusan = traders
+  .filter((info) => info.trader.city === "부산")
+  .map((info) => info.trader.name);
+console.log(AllNameTradeInBusan);
+// 3. **모든 거래 중 가장 높은 거래액을 가진 거래의 거래자 정보(이름, 도시)와 거래액을 출력해주세요.**
+function mostValue(traders, value) {
+  let mostValue = traders[0];
 
-// console.log(mostValue);
+  for (const info of traders) {
+    if (info[value] > mostValue[value]) {
+      mostValue = info;
+    }
+  }
+  return mostValue;
+}
+
+console.log(mostValue(traders, "value"));
+
+const highestValueTransaction = traders.reduce(
+  (maxTransaction, currentTransaction) => {
+    return currentTransaction.value > maxTransaction.value
+      ? currentTransaction
+      : maxTransaction;
+  },
+  traders[0]
+);
+
+console.log(highestValueTransaction);
 // 4. **각 도시별로 발생한 총 거래액을 객체 형태로 매핑해주세요. 예를 들어, `{서울: 총거래액, 부산: 총거래액}`과 같은 형태입니다.**
 
 // 5. **거래액이 700000원 이상인 거래를 모두 찾아, 해당 거래의 연도별로 분류해주세요. 결과는 `{2022: [...거래정보], 2023: [...거래정보]}`와 같은 형태가 되어야 합니다.**
