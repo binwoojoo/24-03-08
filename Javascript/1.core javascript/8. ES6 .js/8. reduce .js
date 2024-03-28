@@ -35,34 +35,54 @@ const appleBasket = [
 //  reduce는 반복을 실행할때마다 currentValue를 accumulator에 누적함
 
 // 사과 바구니에 있는 사과들의 모든 당도를 합산한 결과 얻기
-const result = [99, 2, 3, 4, 5, 6].reduce(function (a, b) {
-  console.log(a);
-  console.log(b);
-  console.log(`${a} +${b} = ${a+b}`);
-  console.log("============================");
-  return a + b;
-},0);
-console.log(`result: ${result}`);
+// const result = [99, 2, 3, 4, 5, 6].reduce(function (a, b) {
+//   console.log(a);
+//   console.log(b);
+//   console.log(`${a} +${b} = ${a + b}`);
+//   console.log("============================");
+//   return a + b;
+// }, 0);
+// console.log(`result: ${result}`);
 
+// const resultTotalSweet = appleBasket.reduce((totalSweet, apple) => {
+//   console.log(totalSweet);
+//   console.log(apple);
+//   console.log("============");
+//   return totalSweet + apple.sweet;
+// }, 0);
 
-const resultTotalSweet = appleBasket
-  .reduce((totalSweet, apple) => {
-    console.log(totalSweet);
-    console.log(apple);
-    console.log('============');
-    return totalSweet + apple.sweet;
-  }, 0)
+// console.log(`사과 당도 총합: ${resultTotalSweet}`);
 
-console.log(`사과 당도 총합: ${resultTotalSweet}`);
+// console.log("============");
 
+// function myReduce(array, callback, initiaValue) {
+//   let accumulator = initiaValue === undefined ? array[0] : initiaValue;
+//   const startIdx = initiaValue === undefined ? 1 : 0;
+//   for (let i = startIdx; i < array.length; i++) {
+//     accumulator = callback(accumulator, array[i]);
+//   }
+//   return accumulator;
+// }
+
+// 색깔별로 사과 갯수 카운트하기
+console.log("==================");
+
+const countByColor = appleBasket.reduce((count, apple) => {
+  if (apple.color in count) {
+    count[apple.color]++;
+  } else {
+    count[apple.color] = 1;
+  }
+  return count;
+}, {});
+
+console.log(countByColor);
 // reduce의 콜백 함수 다음 파라미터는 initiaValue를 의미하며
 // 반복문의 accumulator시작값을 의미함
 // 따라서 0을 시작값으로 두고 return a+b; 를하면
 // 0+1+2+3+4+5+6
 // 시작값을 없애면 accumulator의 시작값이 0번인덱스로 지정되며
 // 1 + 2 + 3 + 4 + 5 + 6
-
-
 
 const userList = [
   {

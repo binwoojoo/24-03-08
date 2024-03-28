@@ -63,7 +63,7 @@ const traderCity = traders.map((info) => {
   const traderLiveInCity = info.trader.city;
   return traderLiveInCity;
 });
-const cites = [...new Set(traderCity)];  // 중복 제거
+const cites = [...new Set(traderCity)]; // 중복 제거
 console.log(cites);
 
 // 연습 3: 대전에 근무하는
@@ -83,15 +83,19 @@ const mappedName = [...new Set(allTraderName)];
 console.log(mappedName);
 
 // 연습 5: 서울에 사는 거래자의 모든 거래액의 총합 출력.
-let total = 0;
-const allTradersInSeoulValue = traders
-  .filter((info) => info.trader.city === "서울")
-  .map((info) => {
-    return info.value;
-  })
-  .forEach((info) => (total += info));
-console.log(total);
+// let total = 0;
+// const allTradersInSeoulValue = traders
+//   .filter((info) => info.trader.city === "서울")
+//   .map((info) => {
+//     return info.value;
+//   })
+//   .forEach((info) => (total += info));
+// console.log(total);
 
+const total = traders
+  .filter((trs) => trs.trader.city === "서울")
+  .reduce(total, (trs) => (total += trs.value));
+console.log(total);
 // // 1. **2023년에 대전에서 발생한 모든 거래의 총액을 계산해주세요.**
 // let total = 0;
 // const AllValueInDaejeon = traders
