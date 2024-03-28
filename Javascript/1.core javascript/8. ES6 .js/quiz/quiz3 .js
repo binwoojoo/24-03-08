@@ -94,8 +94,9 @@ console.log(mappedName);
 
 const total = traders
   .filter((trs) => trs.trader.city === "서울")
-  .reduce(total, (trs) => (total += trs.value));
+  .reduce(function (total, trs) { return total += trs.value},0);
 console.log(total);
+
 // // 1. **2023년에 대전에서 발생한 모든 거래의 총액을 계산해주세요.**
 // let total = 0;
 // const AllValueInDaejeon = traders
