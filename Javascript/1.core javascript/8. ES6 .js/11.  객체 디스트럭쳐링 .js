@@ -52,3 +52,4 @@ const copyDog2 = { ...dog, age: 20, favorite: ["산책"] };
 console.log(dog);
 console.log(copyDog);
 console.log(copyDog2);
+
