@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="fruits">
+      <li id="apple" class="f-item ap">사과</li>
+      <li id="banana" class="f-item bn">바나나</li>
+      <li id="grape" class="f-item gp">포도</li>
+      <li id="peach" class="f-item pc">복숭아</li>
+    </ul>
+
+    <script>
+      // 인수로 전달한 CSS선택자를 만족하는 요소 노드가 여러 개인 경우 첫 번째 노드만 반환함.
+      // const $grape = document.querySelector(".gp");
+      // const $grape = document.querySelector("#fruits li:nth-child(3)");
+      // const $grape = document.querySelector(".bn + li");
+      const $grape = document.querySelector("#grape");
+      const $apple = document.getElementById(`apple`);
+      $apple.style.background = "yellowgreen";
+      console.log($grape);
+      $grape.textContent = "씨없는 포도";
+
+      const $fitemList = [...document.querySelectorAll(".f-item")]; // 유사 배열을 배열로 바꾸는 법 [...object]
+      console.log($fitemList);
+      console.log([1, 2, 3]);
+      // for(const $f of $fitemList) {
+      //   $f.style.color = 'red';
+      // }
+
+      $fitemList.forEach(($f) => {
+        $f.style.color = "blue";
+      });
+
+      // $fitemList.pop();
+      // 유사 배열 : 객체 형태를 유지한 배열
+      const foods = {
+        0: "짜장면",
+        1: "짬뽕",
+        2: "볶음밥",
+        length: 3,
+        name: "무릉도원",
+      };
+      console.log(foods[2]);
+    </script>
+  </body>
+</html>
