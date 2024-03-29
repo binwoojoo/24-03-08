@@ -104,6 +104,7 @@ const userList = [
 userList
   .filter((user) => user.address === "서울")
   .map((user) => ({ name: user.userName, second: user.hobbys[1] }))  // ['축구', '테니스', '테니스']
-  .forEach((result) =>
-    console.log(`${result.name}님의 두번째 취미는 ${result.second}입니다.`)
+  .forEach((result,i) =>
+    console.log(`${result.name}님의 두번째 취미는 ${result.second}입니다.${i}`)
   );
+
