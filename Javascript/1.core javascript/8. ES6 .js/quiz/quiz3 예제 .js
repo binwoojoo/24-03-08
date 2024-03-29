@@ -131,15 +131,17 @@ console.log(
 
 // 4. **각 도시별로 발생한 총 거래액을 객체 형태로 매핑해주세요.
 //   예를 들어, `{서울: 총거래액, 부산: 총거래액}`과 같은 형태입니다.**
-console.log('======================');
+console.log("======================");
 
-const totalByCity = {};  // { 서울: 500000, 대전: 30032030, ... }
+const totalByCity = {}; // { 서울: 500000, 대전: 30032030, ... }
 
 for (let trs of traders) {
   const city = trs.trader.city;
-  if (totalByCity[city]) { // 이 도시는 한번 누적된 적이 있음
+  if (totalByCity[city]) {
+    // 이 도시는 한번 누적된 적이 있음
     totalByCity[city] += trs.value;
-  } else {  // 이 도시는 한번도 나온적이 없던 도시임
+  } else {
+    // 이 도시는 한번도 나온적이 없던 도시임
     totalByCity[city] = trs.value;
   }
 }
@@ -162,14 +164,105 @@ console.log(totalByCity);
 // 5. **거래액이 700000원 이상인 거래를 모두 찾아,
 //   해당 거래의 연도별로 분류해주세요. 결과는
 //   `{2022: [...거래정보], 2023: [...거래정보]}`와 같은 형태가 되어야 합니다.**
+// console.log("======================");
 
-// 6. **각 거래자별로 그들이 진행한 거래의
-//   평균 거래액을 계산해주세요.
-//   결과는 `{거래자이름: 평균거래액}` 형태의 객체가 되어야 합니다.**
+// // 최종 결과 객체
+// const trsOver700kByYear = {};
+
+// for (const trs of traders) {
+//   if (trs.value >= 700000) { // 거래액 필터 조건
+//     const yearString = trs.year.toString();
+//     if (!trsOver700kByYear[yearString]) {
+//       trsOver700kByYear[yearString] = [trs];
+//     } else { // 지금 거래년도가 저장되어 있다면
+//       trsOver700kByYear[yearString].push(trs);
+//     }
+//   }
+// }
+
+// console.log(JSON.stringify(trsOver700kByYear, null, 2));
+
+// // 최종 결과 객체
+// const trsOver700kByYear = {};
+
+//   traders.forEach(trs => {
+//     if (trs.value >= 700000) { // 거래액 필터 조건
+//       const yearString = trs.year.toString();
+//       if (!trsOver700kByYear[yearString]) {
+//         trsOver700kByYear[yearString] = [trs];
+//       } else { // 지금 거래년도가 저장되어 있다면
+//         trsOver700kByYear[yearString].push(trs);
+//       }
+//     }
+//   })
+
+// console.log(JSON.stringify(trsOver700kByYear, null, 2));
+
+// const trsOver700kByYear = traders
+//   .filter((trs) => trs.value >= 700000)
+//   .reduce((transactions, trs) => {
+//     const yearString = trs.year.toString();
+//     if (!transactions[yearString]) transactions[yearString] = [trs];
+//     else transactions[yearString].push(trs);
+//     return transactions;
+//   }, {});
+
+// console.log(JSON.stringify(trsOver700kByYear, null, 2));
+
+// // 6. **각 거래자별로 그들이 진행한 거래의
+// //   평균 거래액을 계산해주세요.
+// //   결과는 `{거래자이름: 평균거래액}` 형태의 객체가 되어야 합니다.**
+// console.log("======================");
+
+// const trsDataByName = traders.reduce((averageList, trs) => {
+//   const name = trs.trader.name;
+//   if (!averageList[name]) { // 이 사람이름이 처음 등장했으면
+//     averageList[name] = { total: trs.value, count: 1 };
+//   } else {
+//     averageList[name].total += trs.value;
+//     averageList[name].count++;
+//   }
+//   return averageList;
+// }, {});
+
+// // console.log(trsDataByName);
+
+// // 평균 구하기
+// for (const key in trsDataByName) {
+//   trsDataByName[key].average
+//     = trsDataByName[key].total / trsDataByName[key].count;
+// }
+
+// console.log(trsDataByName);
 
 // 7. **2022년과 2023년 각각에서 가장 많은 거래를 한 거래자의
 //   이름과 그 거래 횟수를 출력해주세요.**
 
+const result = traders.reduce((acc, trs) => {
+  // 연도별 거래자 거래 횟수 집계
+  const key = `${trs.year}_${trs.trader.name}`;
+
+  if (!acc[key]) {
+    acc[key] = 1;
+  } else {
+    acc[key]++;
+  }
+  // 연도별 최대 거래 횟수 찾기
+  const yearMaxKey = `max_${trs.year}`;
+  if (!acc[yearMaxKey] || acc[key] > acc[yearMaxKey].count) {
+    acc[yearMaxKey] = { name: trs.trader.name, count: acc[key] };
+  }
+  return acc;
+}, {});
+
+console.log(result);
+// 결과 출력
+console.log(
+  `2022년 가장 많은 거래를 한 거래자: ${result.max_2022.name}, 거래 횟수: ${result.max_2022.count}`
+);
+console.log(
+  `2023년 가장 많은 거래를 한 거래자: ${result.max_2023.name}, 거래 횟수: ${result.max_2023.count}`
+);
 // 8. **모든 거래 중 거래액이 중간값인
 //   거래의 정보(거래자 이름, 도시, 연도, 거래액)를 출력해주세요.**
 
