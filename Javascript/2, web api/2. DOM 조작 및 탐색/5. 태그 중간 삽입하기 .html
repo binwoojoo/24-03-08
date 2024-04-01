@@ -22,7 +22,8 @@
 
       // 중간삽입: insertBefore
       // $fruits.insertBefore($newLi, $grape);
-      $fruits.insertBefore($newLi, $fruits.firstElementChild);
+      // $fruits.insertBefore($newLi, $fruits.firstElementChild);
+      $fruits.insertBefore($newLi, document.querySelector('li:nth-child(2)'));
     </script>
   </body>
 </html>
