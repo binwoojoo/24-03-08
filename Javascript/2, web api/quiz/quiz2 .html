@@ -53,7 +53,6 @@
       //   const $title = document.querySelector(".title");
       //   const $menuOpen = document.querySelector("ul");
       //   const $menuOpenIcon = document.querySelector(".menu");
-      //   console.log($menuOpen);
       //   $title.addEventListener("click", (e) => {
       //     if ($menuOpen.style.display === "none") {
       //       $menuOpen.style.display = "block";
@@ -71,7 +70,7 @@
       const $lunches = document.getElementById("lunches");
       const $title = $lunches.querySelector(".title");
 
-      $title.addEventListener("click", function () {
+      $title.addEventListener("click", () => {
         //toggle: 해당클래스가 없으면 추가, 있으면 제거
         $lunches.classList.toggle("open");
       });

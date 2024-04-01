@@ -53,32 +53,30 @@
     </div>
 
     <script>
-    //   const $btn = document.querySelector(".btn");
-    //   const $drop = document.querySelector("#drop-content");
-    //   $btn.addEventListener("mouseover", (e) => {
-    //     if (($drop.style.display = "none")) {
-    //       $drop.style.display = "block";
-    //     }
-    //   });
-    //   $drop.addEventListener("mouseleave", (e) => {
-    //     $drop.style.display = "none";
-    //   });
+      // const $btn = document.querySelector(".btn");
+      // const $drop = document.querySelector("#drop-content");
+      // $btn.addEventListener("mouseover", (e) => {
+      //   $drop.style.display = "block";
+      // });
+      // $drop.addEventListener("mouseleave", (e) => {
+      //   $drop.style.display = "none";
+      // });
 
-      const $dropContent = document.getElementById("drop-content");
-      const $btn = document.querySelector(".btn");
+        const $dropContent = document.getElementById("drop-content");
+        const $btn = document.querySelector(".btn");
 
-      $btn.onmouseover = () => {
-        $dropContent.style.display = "block";
-      };
+        $btn.onmouseover = () => {
+          $dropContent.style.display = "block";
+        };
 
-      /*
-        mouseover, mouseout    : 버블링 있음
-        mouseenter, mouseleave : 버블링 없음
-    */
+        /*
+          mouseover, mouseout    : 버블링 있음
+          mouseenter, mouseleave : 버블링 없음
+      */
 
-      $btn.parentElement.onmouseleave = () => {
-        $dropContent.style.display = "none";
-      };
+        $btn.parentElement.onmouseleave = () => {
+          $dropContent.style.display = "none";
+        };
     </script>
   </body>
 </html>
