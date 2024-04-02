@@ -89,3 +89,4 @@ function iconClickHandler(e) {
 createNumberIcons();
 
 document.getElementById("numbers").addEventListener("click", iconClickHandler);
+
