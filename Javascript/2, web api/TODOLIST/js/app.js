@@ -1,12 +1,41 @@
+// =================전역 변수 영역 ㅋㅋ===================
 const $plusToDoList = document.getElementById("add");
 const $userInputToDoList = document.getElementById("todo-text");
 const $ul = document.querySelector(".todo-list");
+const todos = [
+  {
+    id: 1,
+    text: "할 일 1",
+    done: false,
+  },
+  {
+    id: 2,
+    text: "할 일 2",
+    done: false,
+  },
+  {
+    id: 3,
+    text: "할 일 3",
+    done: false,
+  },
+];
+// =================함수 정의 영역 ㅋㅋ===================
+
+const makeNewId = () => {
+  return todos.length === 0 ? 1 : todos[todos.length - 1].id + 1;
+};
+
+const newTodo = {
+  id: makeNewId(),
+  text: $userInputToDoList.value,
+  done: false,
+};
+
+todos.push(newTodo);
 
 // 새로운 todo리스트 생성 함수
 function createToDoList() {
-  const $ul = document.querySelector(".todo-list");
-  // 기존의 아이콘들을 모두 삭제
-  $ul.innerHTML += `<li data-id="1" class="todo-list-item">
+  $ul.innerHTML += `<li data-id="${newTodo.id}" class="todo-list-item">
   <label class="checkbox">
     <input type="checkbox" />
     <span class="text">${$userInputToDoList.value}</span>
@@ -19,14 +48,14 @@ function createToDoList() {
   </div>
 </li>`;
   $userInputToDoList.value = "";
+
+
 }
 
-// 실행 영역 ㅋㅋ
+// ================실행 영역 ㅋㅋ===================
+
+// 새로운 todo리스트 추가 생성 함수 실행
 $plusToDoList.addEventListener("click", (e) => {
-  e.preventDefault();
+  e.preventDefault(); // form의 submit 중단!
   createToDoList();
-  if (($userInputToDoList.value = "")) {
-    $userInputToDoList.placeholder.value = "ㄲㅈ";
-  }
-  console.log($userInputToDoList);
 });
