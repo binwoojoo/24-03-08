@@ -1,5 +1,8 @@
 //========= 전역 변수 영역 ========//
 
+// 현재 수정모드에 진입하셨나요?
+let isEnterEditMode = false;
+
 // 서버와 통신할 데이터
 const todos = [
   {
