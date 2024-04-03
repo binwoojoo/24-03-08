@@ -95,12 +95,22 @@ function toggleDone(dataId) {
 
 function spanToInput($targetSpan) {
   // 새로운 input 요소를 생성
-  var inputElement = document.createElement("input");
+  const inputElement = document.createElement("input");
+  inputElement.classList.add("modify-input");
   // span의 내용을 input의 값으로 설정
-  inputElement.value = $targetSpan.innerHTML;
+  inputElement.value = $targetSpan.textContent;
   // span 요소를 input 요소로 대체
   $targetSpan.parentNode.replaceChild(inputElement, $targetSpan);
-  $targetSpan.classList.add(".modify-input");
+}
+
+function inputToSpan($targetSpan) {
+  // 새로운 span 요소를 생성
+  const spanElement = document.createElement("span");
+  spanElement.classList.add("text");
+  // input의 내용을 span의 값으로 설정
+  spanElement.textContent = $targetSpan.value;
+  // input 요소를 span 요소로 대체
+  $targetSpan.parentNode.replaceChild(spanElement, $targetSpan);
 }
 
 //========= 함수 실행 영역 - 함수 호출, 이벤트 리스너 등록 ========//
@@ -128,21 +138,25 @@ document.querySelector(".todo-list").addEventListener("click", (e) => {
 
     // 배열에서 데이터 제거
     removeTodoData(dataId);
+
   } else if (e.target.matches(".checkbox input[type=checkbox]")) {
     // 체크박스를 클릭하면
     // 체크 화면 렌더링 처리
     e.target.closest(".checkbox").classList.toggle("checked");
     // 체크 데이터 처리
     toggleDone(dataId);
+
   } else if (e.target.matches(".modify span")) {
     // 수정 버튼 탐색 하기!!
     const $targetSpan = $targetLi.firstElementChild.lastElementChild;
+
     if (e.target.classList.value === "lnr lnr-undo") {
       e.target.classList.value = "lnr lnr-checkmark-circle";
+      spanToInput($targetSpan);
     } else {
       e.target.classList.value = "lnr lnr-undo";
+      inputToSpan($targetSpan);
     }
-    spanToInput($targetSpan);
-    // console.log($targetSpan);
+     
   }
 });
