@@ -5,6 +5,7 @@ const $subtractBtn = document.getElementById("btn-subtract");
 const $multiplyBtn = document.getElementById("btn-multiply");
 const $divideBtn = document.getElementById("btn-divide");
 const $ulBox = document.querySelector(".log-entries");
+
 // result 요소노드
 const $currentResult = document.getElementById("current-result");
 
@@ -31,9 +32,8 @@ const calculate = (clicked) => {
     // 계산 로그 생성
     const descriptionLog = `${prevResult} + ${enteredNumber} = ${currentResult}`;
     $currentCalculation.textContent = descriptionLog;
-    const $newLi = document.createElement("li");
-    $newLi.textContent = descriptionLog;
-    $ulBox.appendChild($newLi);
+    $userInput.value = "";
+    makeLi(descriptionLog);
   }
   // 빼기 일때
   else if (clicked.id === "btn-subtract") {
@@ -49,9 +49,7 @@ const calculate = (clicked) => {
     const descriptionLog = `${prevResult} - ${enteredNumber} = ${currentResult}`; // 계산 과정을 설명하는 문자열 생성
     $currentCalculation.textContent = descriptionLog;
     $userInput.value = "";
-    const $newLi = document.createElement("li");
-    $newLi.textContent = descriptionLog;
-    $ulBox.appendChild($newLi);
+    makeLi(descriptionLog);
   }
   // 곱하기 일때
   else if (clicked.id === "btn-multiply") {
@@ -66,9 +64,7 @@ const calculate = (clicked) => {
     const descriptionLog = `${prevResult} x ${enteredNumber} = ${currentResult}`;
     $currentCalculation.textContent = descriptionLog;
     $userInput.value = "";
-    const $newLi = document.createElement("li");
-    $newLi.textContent = descriptionLog;
-    $ulBox.appendChild($newLi);
+    makeLi(descriptionLog);
   }
   // 나누기 일때
   else if (clicked.id === "btn-divide") {
@@ -83,8 +79,12 @@ const calculate = (clicked) => {
     const descriptionLog = `${prevResult} / ${enteredNumber} = ${currentResult}`;
     $currentCalculation.textContent = descriptionLog;
     $userInput.value = "";
-    const $newLi = document.createElement("li");
-    $newLi.textContent = descriptionLog;
-    $ulBox.appendChild($newLi);
+    makeLi(descriptionLog);
   }
+};
+
+const makeLi = (descriptionLog) => {
+  const $newLi = document.createElement("li");
+  $newLi.textContent = descriptionLog;
+  $ulBox.appendChild($newLi);
 };
