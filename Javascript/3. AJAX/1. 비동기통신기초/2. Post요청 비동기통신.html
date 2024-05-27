@@ -45,14 +45,14 @@
           body: document.getElementById("content").value,
           userId: 1,
         };
-
+        
         // 요청 헤더에 payload의 mime type을 명시해야함.
         xhr.setRequestHeader("content-type", "application/json");
 
         // 읽은 데이터는 순수 자바스크립트이므로 서버로 보낼때는
         // JSON으로 변환하여 보내야한다.
         xhr.send(JSON.stringify(payload));
-        
+
         // 응답확인
         xhr.onload = (e) => {
           console.log(xhr);
